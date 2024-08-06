@@ -1190,7 +1190,7 @@ export async function handler(chatUpdate) {
         if (!('autoread2' in settings)) settings.autoread2 = true;
         if (!('restrict' in settings)) settings.restrict = false;
         if (!('antiCall' in settings)) settings.antiCall = false;
-        if (!('antiPrivate' in settings)) settings.antiPrivate = false;
+        if (!('antiPrivate' in settings)) settings.antiPrivate = true;
         if (!('modejadibot' in settings)) settings.modejadibot = true;
         if (!('antispam' in settings)) settings.antispam = false;
         if (!('audios_bot' in settings)) settings.audios_bot = true;
@@ -1198,11 +1198,11 @@ export async function handler(chatUpdate) {
       } else {
         global.db.data.settings[this.user.jid] = {
           self: false,
-          autoread: false,
-          autoread2: false,
+          autoread: true,
+          autoread2: true,
           restrict: false,
           antiCall: false,
-          antiPrivate: false,
+          antiPrivate: true,
           modejadibot: true,
           antispam: false,
           audios_bot: true,
@@ -1402,7 +1402,7 @@ ${tradutor.texto1[1]} ${messageNumber}/3
             if (user.commandCount === 2) {
               const remainingTime = Math.ceil((user.lastCommandTime + 5000 - Date.now()) / 1000);
               if (remainingTime > 0) {
-                const messageText = `*[ ℹ️ ] Espera* _${remainingTime} segundos_ *antes de utilizar otro comando.*`;
+                const messageText = `*[ ℹ️ ] انتظر* _${remainingTime} ثواني *قبل استخدام اي امر.*`;
                 m.reply(messageText);
                 return;
               } else {
