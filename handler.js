@@ -1214,7 +1214,7 @@ export async function handler(chatUpdate) {
     }
 
     const idioma = global.db.data.users[m.sender]?.language || 'es';
-    const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`))
+    const _translate = JSON.parse(fs.readFileSync(`./language/ar2.json`))
     const tradutor = _translate.handler.handler
 
     if (opts['nyimak']) {
@@ -1618,7 +1618,7 @@ export async function participantsUpdate({ id, participants, action }) {
    * 
    ***********************/
   const idioma = global.db.data.chats[id]?.language || 'es';
-  const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`))
+  const _translate = JSON.parse(fs.readFileSync(`./language/ar2.json`))
   const tradutor = _translate.handler.participantsUpdate
 
   const m = mconn
@@ -1683,7 +1683,7 @@ export async function participantsUpdate({ id, participants, action }) {
 export async function groupsUpdate(groupsUpdate) {
   //console.log(groupsUpdate)
   const idioma = global.db.data.chats[groupsUpdate[0].id]?.language || 'es';
-  const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`))
+  const _translate = JSON.parse(fs.readFileSync(`./language/ar2.json`))
   const tradutor = _translate.handler.participantsUpdate
 
   if (opts['self']) {
