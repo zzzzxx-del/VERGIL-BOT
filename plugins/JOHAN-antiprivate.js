@@ -6,7 +6,7 @@ export async function before(m, {conn, isAdmin, isBotAdmin, isOwner, isROwner}) 
   const chat = global.db.data.chats[m.chat];
   const bot = global.db.data.settings[this.user.jid] || {};
   if (bot.antiPrivate && !isOwner && !isROwner) {
-    await m.reply(`*😕 اسف يا @${m.sender.split`@`[0]}, ممنوع التحدث مع البوت في الدردشه الخاص و الان سيتم حظرك*\n\n*اذا كنت تحتاج الى البوت في مجموعتك ف انصحك بأن تراسل مطوري*\n\n*رقم مطوري:-* +201096570636`, false, {mentions: [m.sender]});
+    await m.reply(`*😕 اسف يا @${m.sender.split`@`[0]}, ممنوع التحدث مع البوت في الدردشه الخاص و الان سيتم حظرك*\n\n*اذا كنت تحتاج الى البوت في مجموعتك ف انصحك بأن تراسل مطوري*\n\n*رقم مطوري:-* wa.me//+201096570636`, false, {mentions: [m.sender]});
     await this.updateBlockStatus(m.chat, 'block');
   }
   return !1;
